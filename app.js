@@ -67,7 +67,6 @@ function onMouseMove(event) {
     const x = event.offsetX;
     const y = event.offsetY;
     if (!painting) {
-        pathPoints.push({ x, y }); // 점을 배열에 저장
         startX = x;
         startY = y;
         ctx.beginPath();
@@ -75,6 +74,7 @@ function onMouseMove(event) {
     } else {
         ctx.lineTo(x, y);
         ctx.stroke();
+        pathPoints.push({ x, y }); // 점을 배열에 저장
     }
 }
 
